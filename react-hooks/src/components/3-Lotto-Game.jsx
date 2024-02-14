@@ -16,12 +16,27 @@ const LottoGame = () => {
     const guessClickHandler = (e) => {
         const guess = document.querySelector('#guess')
         // console.log(guess.value)
-        appendGuess(guess.value)
+        appendGuess(parseInt(guess.value))
     }
 
     useEffect( () => {
         if (guesses.length === 3) {
-            alert('game over')
+
+            const answer = 1
+            let winner = false
+
+            guesses.forEach(guess => {
+              if(guess === answer)
+                winner = true
+                return
+            });
+
+            if(winner)  
+                alert(`congrats you won.. The lucky number was ${answer}`)
+            else
+                alert(`Game over... you lose. The lucky number was ${answer}`)
+            
+            setGuesses([])
         } 
     }, [guesses])
 
@@ -43,7 +58,7 @@ const LottoGame = () => {
             </div>
             <hr />
             <div>
-                <input type="number" name="guess" id="guess"/>
+                <input type="number" name="guess" defaultValue={0} id="guess"/>
                 <button onClick={ (e) => guessClickHandler(e)}>Guess</button>
             </div>
         </section>
