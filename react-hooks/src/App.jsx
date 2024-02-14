@@ -1,11 +1,11 @@
 import './App.css'
-import Counter from './components/counter'
+import CounterPrevState from "./components/CounterPrevState"
 
 function App() {
 
   return (
     <div className="App">
-      <Counter />
+      <CounterPrevState />
     </div>
   )
 }
