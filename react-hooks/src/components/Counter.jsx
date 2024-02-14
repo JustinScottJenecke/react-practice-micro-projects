@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 
 const Counter = () => {
@@ -5,7 +6,12 @@ const Counter = () => {
     const [counter, setCounter] = useState(0)
 
     const incrementCounter = () => {
-        setCounter( (prevState) => {prevState ++})
+        setCounter( prevState => prevState + 1)
+        console.log(counter)
+    }
+    const decrementCounter = () => {
+        setCounter(counter - 1)
+        console.log(counter)
     }
 
     return (
@@ -14,8 +20,8 @@ const Counter = () => {
                 {counter}
             </div>
             <div>
-                <button>Subtract</button>
-                <button onClick={incrementCounter}>Add</button>
+                <button onClick={ () => decrementCounter}>Subtract</button>
+                <button onClick={ () => incrementCounter}>Add</button>
             </div>
         </section>
     );
