@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --button-color-basic: #345beb;
+            --button-color-focus: #062cb8;
+
+            --button-text-focus: #345beb;
+
+            --red: 20;
+        }
+
+
+        .button {
+            font-size: 10px;
+            background-color: var(--button-colour-basic);
+            border: none;
+            padding: 4px 15px;
+        }
+
+
+        /* 100 lines later */
+        .button:hover {
+            font-size: 12px;
+            background-color: #062cb8;
+            color: #edf1fc;
+        }
+
+
+        .icon {
+            background-color: #345beb;
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        div {
+            zoom: --red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button class='button'>hi</button>
+        <br>
+        <br>
+        <button class='button'>bye</button>
+
+        <br>
+        <br>
+        <br>
+        <button class='icon'>{;}</button>
+    </div>
+</body>
+
+</html>
