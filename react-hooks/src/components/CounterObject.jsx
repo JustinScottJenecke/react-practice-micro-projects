@@ -1,23 +1,32 @@
-import { count } from "console"
 import { useState } from "react"
 
 const CounterObject = () => {
 
     const counterObject = {
         title: 'tally app with objects',
-        value: 0,
-        increment: (setter) => {
-            setter(prevState => prevState+1)
-        },
-        decrement: (setter) => {
-            setter(prevState => prevState-1)
-        }
+        value: 0
+    }
+
+    const increment = () => {
+        
+        let {title, value} = counter
+
+        setCounter(
+            {
+                ...counter,
+                value: value+1
+            }
+        )
     }
 
     const [counter, setCounter] = useState(counterObject)
 
     return (
         <section>
+            <input type="text" value={counter.title} onChange={ e => setCounter({ ...counter, title: e.target.value })}/>
+            <br />
+            <hr />
+            <br />
             <h2>
                 {counter.title}
             </h2>
@@ -25,8 +34,8 @@ const CounterObject = () => {
                 {counter.value}
             </div>
             <div>
-                <button onClick={ () => counter.decrement(setCounter)}>Subtract</button>
-                <button onClick={ () => counter.increment(setCounter)}>Add</button>
+                <button onClick={ () => null}>Subtract</button>
+                <button onClick={ () => increment()}>Add</button>
             </div>
         </section>
     )
