@@ -1,6 +1,6 @@
 import './App.css'
-import CounterObject from './components/CounterObject'
-import CounterPrevState from "./components/CounterPrevState"
+import CounterObject from './components/2-CounterObject'
+import CounterPrevState from "./components/1-CounterPrevState"
 
 function App() {
 
