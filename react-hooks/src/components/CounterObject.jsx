@@ -8,13 +8,21 @@ const CounterObject = () => {
     }
 
     const increment = () => {
-        
         let {title, value} = counter
-
         setCounter(
             {
                 ...counter,
                 value: value+1
+            }
+        )
+    }
+
+    const decrement = () => {
+        let value = counter.value
+        setCounter(
+            {
+                ...counter,
+                value: value -1
             }
         )
     }
@@ -34,8 +42,8 @@ const CounterObject = () => {
                 {counter.value}
             </div>
             <div>
-                <button onClick={ () => null}>Subtract</button>
-                <button onClick={ () => increment()}>Add</button>
+                <button onClick={ decrement}>Subtract</button>
+                <button onClick={ increment}>Add</button>
             </div>
         </section>
     )
