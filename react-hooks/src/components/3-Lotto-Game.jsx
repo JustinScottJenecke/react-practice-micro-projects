@@ -16,8 +16,7 @@ const LottoGame = () => {
     const guessClickHandler = (e) => {
         const guess = document.querySelector('#guess')
         // console.log(guess.value)
-
-        return guess.value
+        appendGuess(guess.value)
     }
 
     useEffect( () => {
@@ -33,16 +32,19 @@ const LottoGame = () => {
                 <ul>
                     {
                         guesses.map( guess => {
-                            <li>
-                                {guess}
-                            </li>
+                            return (
+                                <li>
+                                    {guess}
+                                </li>
+                            )
                         })
                     }
                 </ul>
             </div>
+            <hr />
             <div>
                 <input type="number" name="guess" id="guess"/>
-                <button onClick={guessClickHandler}>Guess</button>
+                <button onClick={ (e) => guessClickHandler(e)}>Guess</button>
             </div>
         </section>
     )
