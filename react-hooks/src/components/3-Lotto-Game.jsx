@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const LottoGame = () => {
 
     const [guesses, setGuesses] = useState([]);
+    const guessRef = useRef(0);
 
     const generateNumber = () => {
         return Math.floor(Math.random() * 10) + 1
@@ -10,6 +11,13 @@ const LottoGame = () => {
 
     const appendGuess = (newGuess) => {
         setGuesses([...guesses, newGuess])
+    }
+
+    const guessClickHandler = (e) => {
+        const guess = document.querySelector('#guess')
+        // console.log(guess.value)
+
+        return guess.value
     }
 
     useEffect( () => {
@@ -34,7 +42,7 @@ const LottoGame = () => {
             </div>
             <div>
                 <input type="number" name="guess" id="guess"/>
-                <button>Guess</button>
+                <button onClick={guessClickHandler}>Guess</button>
             </div>
         </section>
     )
