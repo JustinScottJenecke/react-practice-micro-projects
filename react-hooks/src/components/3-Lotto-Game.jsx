@@ -13,7 +13,7 @@ const LottoGame = () => {
     const [guesses, setGuesses] = useState([]);
     const guessRef = useRef(0);
 
-    const generateNumber = () => {
+    const generateLuckyNumber = () => {
         return Math.floor(Math.random() * 20) + 1;
     }
 
@@ -42,7 +42,7 @@ const LottoGame = () => {
     useEffect( () => {
         if (guesses.length === NUM_GUESSES) {
 
-            const luckyNumber = 1;
+            const luckyNumber = generateLuckyNumber;
             let winner = false;
 
             // compare lucky number to guesses
@@ -65,7 +65,7 @@ const LottoGame = () => {
 
     return (
         <section>
-            <h2>Lotto Game</h2>
+            <h2>Lucky Number!</h2>
             <div className="guess-container">
                 <ol className="guesses-container">
                     {
