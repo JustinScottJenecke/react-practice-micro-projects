@@ -4,12 +4,17 @@ const LottoGame = () => {
 
     const NUM_GUESSES = 7;
 
+    const [gameStart, setGameStart] = useState(true);
     const [guesses, setGuesses] = useState([]);
     const guessRef = useRef(0);
 
     const generateNumber = () => {
-        return Math.floor(Math.random() * 10) + 1;
+        return Math.floor(Math.random() * 20) + 1;
     }
+
+    // for (let i = 0; i < 10; i++) {
+    //     console.log(generateNumber());
+    // }
 
     const appendGuess = (newGuess) => {
         setGuesses([...guesses, newGuess]);
@@ -22,23 +27,34 @@ const LottoGame = () => {
     }
 
     useEffect( () => {
+        if (gameStart) {
+            alert('You have 7 attempts to guess the lucky number. Click continue to start.. \n\n GoodLuck! ');    
+            setGameStart(false)
+        }
+        
+    }, [gameStart])
+ 
+    useEffect( () => {
         if (guesses.length === NUM_GUESSES) {
 
-            const answer = 1;
+            const luckyNumber = 1;
             let winner = false;
 
+            // compare lucky number to guesses
             guesses.forEach(guess => {
-              if(guess === answer)
+              if(guess === luckyNumber)
                 winner = true;
                 return
             });
 
             if(winner)  
-                alert(`congrats you won.. The lucky number was ${answer}`);
+                alert(`congrats you won.. The lucky number was ${luckyNumber}`);
             else
-                alert(`Game over... you lose. The lucky number was ${answer}`);
+                alert(`Game over... you lose. The lucky number was ${luckyNumber}`);
             
+            // refresh game controller variabels and state
             setGuesses([])
+            setGameStart(true)
         } 
     }, [guesses])
 
