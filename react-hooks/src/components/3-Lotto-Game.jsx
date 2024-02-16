@@ -3,6 +3,11 @@ import { useEffect, useRef, useState } from "react";
 const LottoGame = () => {
 
     const NUM_GUESSES = 7;
+    const INSTRUCTIONS =
+        'A lucky number between 1 and 20 is generated through an algorithm. \n\n' 
+        + 'You have 7 attempts to guess the lucky number. If you guess correctly, you win! If not? you lose :(' 
+        + '\n\n Click continue to start.. and good luck! '
+    ;
 
     const [gameStart, setGameStart] = useState(true);
     const [guesses, setGuesses] = useState([]);
@@ -28,7 +33,7 @@ const LottoGame = () => {
 
     useEffect( () => {
         if (gameStart) {
-            alert('You have 7 attempts to guess the lucky number. Click continue to start.. \n\n GoodLuck! ');    
+            alert(INSTRUCTIONS);    
             setGameStart(false)
         }
         
@@ -64,9 +69,9 @@ const LottoGame = () => {
             <div className="guess-container">
                 <ol className="guesses-container">
                     {
-                        guesses.map( guess => {
+                        guesses.map( (guess, i) => {
                             return (
-                                <li>
+                                <li key={i}>
                                     {guess}
                                 </li>
                             )
