@@ -8,7 +8,7 @@ const CleanupEffects = () => {
     return ( 
         <section>
             <button onClick={() => setDisplay(!display)}>
-                Toggle Display
+                Toggle Mouse Tracker
             </button>
             {display && <MouseEffects />}
         </section> 
