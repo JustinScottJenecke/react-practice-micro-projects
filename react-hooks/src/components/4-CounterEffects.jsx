@@ -8,7 +8,7 @@ const CounterEffects = () => {
     return (
         <div>
             <button onClick={() => {setCount(prevCount => prevCount + 1)}}>
-                {count}
+                you clicked {count} {count == 1 ? 'time' : 'times'}
             </button>
         </div>
     )
