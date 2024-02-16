@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const EffectErrors = () => {
+const TimerEffectErrors = () => {
 
     const [timer, setTimer] = useState(0)
 
@@ -23,4 +23,4 @@ const EffectErrors = () => {
      );
 }
 
-export default EffectErrors;
+export default TimerEffectErrors;

@@ -4,6 +4,7 @@ import CounterPrevState from "./components/1-CounterPrevState"
 import LottoGame from "./components/3-Lotto-Game"
 import CounterEffects from './components/4-CounterEffects'
 import CleanupEffects from './components/6-CleanupEffects'
+import TimerEffectErrors from './components/7-TimerEffectErrors'
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
       {/* <CounterObject /> */}
       {/* <LottoGame /> */}
       {/* <CounterEffects /> */}
-      <CleanupEffects />
+      <CleanupEffects /> 
     </div>
   )
 }
