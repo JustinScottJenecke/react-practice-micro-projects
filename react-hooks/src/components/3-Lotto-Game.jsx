@@ -46,7 +46,7 @@ const LottoGame = () => {
         <section>
             <h2>Lotto Game</h2>
             <div className="guess-container">
-                <ol>
+                <ol className="guesses-container">
                     {
                         guesses.map( guess => {
                             return (

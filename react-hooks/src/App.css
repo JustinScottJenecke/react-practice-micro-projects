@@ -39,3 +39,17 @@
 .read-the-docs {
   color: #888;
 }
+
+.guesses-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0;
+}
+.guesses-container > li {
+  padding: 0 !important;
+  list-style: none;
+}
+.guesses-container > li:nth-child(even) {
+  color: rgb(255, 255, 255);
+  background-color: black;
+}
