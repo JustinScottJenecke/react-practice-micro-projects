@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const EffectErrors = () => {
 
@@ -7,6 +7,14 @@ const EffectErrors = () => {
     const tick = () => {
         setCount(prev => prev + 1)
     }
+
+    useEffect( () => {
+        const interval = setInterval(tick, 1000)
+
+        return () => {
+            clearInterval(interval)
+        }
+    }, [])
 
     return ( 
         <>
