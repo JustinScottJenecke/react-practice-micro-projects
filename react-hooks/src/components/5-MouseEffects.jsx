@@ -14,11 +14,12 @@ const MouseEffects = () => {
             setY(e.clientY);
         })
 
-    })
+    }, [])
     
     return ( 
         <section>
-
+            <h2>Mouse Coordinates</h2>
+            <b>X: {x}</b> | <b>Y: {y}</b>
         </section>
      );
 }
