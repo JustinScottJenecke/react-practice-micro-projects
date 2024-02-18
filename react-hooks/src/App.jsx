@@ -1,20 +1,11 @@
 import './App.css'
-import CounterObject from './components/2-CounterObject'
-import CounterPrevState from "./components/1-CounterPrevState"
-import LottoGame from "./components/3-Lotto-Game"
-import CounterEffects from './components/4-CounterEffects'
-import CleanupEffects from './components/6-CleanupEffects'
-import TimerEffectErrors from './components/7-TimerEffectErrors'
+import Basics from './pages/Basics'
 
 function App() {
 
   return (
     <div className="App">
-      {/* <CounterPrevState /> */}
-      {/* <CounterObject /> */}
-      {/* <LottoGame /> */}
-      {/* <CounterEffects /> */}
-      <CleanupEffects /> 
+      <Basics />
     </div>
   )
 }
