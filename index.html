@@ -1,60 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        :root {
-            --button-color-basic: #345beb;
-            --button-color-focus: #062cb8;
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        /* @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+    } */
+    .box {
+        margin: 1rem;
+        box-shadow: 1px 1px 4px 1px rgba(53, 53, 53, 0.637);
+    }
+    
 
-            --button-text-focus: #345beb;
-
-            --red: 20;
-        }
-
-
-        .button {
-            font-size: 10px;
-            background-color: var(--button-colour-basic);
-            border: none;
-            padding: 4px 15px;
-        }
-
-
-        /* 100 lines later */
-        .button:hover {
-            font-size: 12px;
-            background-color: #062cb8;
-            color: #edf1fc;
-        }
-
-
-        .icon {
-            background-color: #345beb;
-            border-radius: 50%;
-            padding: 10px;
-        }
-
-        div {
-            zoom: --red;
-        }
-    </style>
+  </style>
 </head>
 
 <body>
-    <div>
-        <button class='button'>hi</button>
-        <br>
-        <br>
-        <button class='button'>bye</button>
+    <!-- <div class="lg:content-auto px-3 py-3"> -->
+    <div class="box py-20">
+        <h2>CSS preprocessors</h2>
+        <ul>
+            <li>CSS Frameworks / preprocessors - unique syntax, add to the functionality</li>
+            <li>Examples: SASS, LESS</li>
+        </ul>
 
         <br>
+
+        <h2>Ui frameworks</h2>
+        <ul>
+            <li>Ui Frameworks - come with utility classes, ui components, prebuilt styles, some also javascript</li>
+            <li>Bootstrap, Bulma, Mateialize</li>
+        </ul>
+
         <br>
-        <br>
-        <button class='icon'>{;}</button>
+
+        <h2>Utility Classes</h2>
+        <ul>
+            <li>A lot more low level that ui frameworks, they only give utility with pre-written css</li>
+            <li>Tailwind</li>
+        </ul>
+
     </div>
 </body>
 
